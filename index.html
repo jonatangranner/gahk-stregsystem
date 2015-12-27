@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Shopping application</title>
+		<link href="css/layout.css" rel="stylesheet" media="all"/>
+	</head>
+	<body>
+
+		<div id="wrap">
+
+			<ul id="default-item-list"></ul>
+			
+			<div class="right-column">
+				<img src="img/GAHK_logo.png" alt="GAHK" id="gahk-logo">
+				<h2 id="basket-message">Du har valgt <span id="basket">0</span> varer</h2>
+				<table id="shopping-cart">
+					<tbody id="shopping-list"></tbody>
+					<tfoot>
+						<tr>
+							<td colspan="5" id="total">0.00</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+
+
+	    <script type="text/template" id="tmp-shoppingListItem">
+	    	<img src='img/<%= url %>.jpg'>
+	    	<a class="name"><%= title %></a>
+	    	<span class="price"><%= price.toFixed(2) %></span> 
+	    </script>
+
+	    <script type="text/template" id="tmp-shoppingCartItem">
+	    	<td class="name"><%= title %></td>
+	    	<td><a class="quantity" data-type="decrease"></a></td>
+	    	<td class="quantity-total"><%= quantity %> </td>
+	    	<td><a class="quantity" data-type="increase"></a></td>
+	    	<td class="sub-total"><%= total.toFixed(2) %></td>
+	    </script>
+
+		<script src="js/libs/jquery-min.js"></script>
+		<script src="js/libs/underscore-min.js"></script>
+	    <script src="js/libs/backbone-min.js"></script>
+	    
+	    <script src="js/app.js"></script>
+
+	</body>
+</html>
